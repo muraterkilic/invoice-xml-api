@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Faktura xmlns="http://crd.gov.pl/wzor/2023/06/29/12648/">
+    <Podmiot1>
+        <DaneIdentyfikacyjne>
+            <NIP>9781399259</NIP>
+        </DaneIdentyfikacyjne>
+    </Podmiot1>
+    <Fa>
+        <P_1>2023-08-31</P_1>
+        <P_2>FK2023/08/31</P_2>
+    </Fa>
+</Faktura>

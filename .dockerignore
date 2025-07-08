@@ -1,0 +1,21 @@
+# Git
+.git
+.gitignore
+
+# Maven
+target/
+!target/*.jar
+
+# IDE dosyaları
+.idea/
+*.iml
+.vscode/
+
+# Logs
+logs/
+*.log
+
+# Diğer
+README.md
+DOCKERFILE
+docker-compose.yml
