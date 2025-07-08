@@ -43,20 +43,6 @@ Uygulama http://localhost:8080 adresinde çalışmaya başlayacaktır.
 
 ## API Kullanımı
 
-### Fatura Yükleme
-
-```http
-POST /api/invoices
-Content-Type: application/json
-
-{
-  "base64xml": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz..."
-}
-```
-
-### Teşhis Araçları
-
-```http
 POST /api/diagnostic/analyze-base64
 Content-Type: application/json
 
@@ -118,23 +104,32 @@ POST /api/invoices
 Content-Type: application/json
 
 {
-  "base64xml": "PHNwZWNpZmljYXRpb24geG1sbnM9Imh0dHA6Ly9..."
+  "base64xml": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPEZha3R1cmEgeG1sbnM9Imh0dHA6Ly9jcmQuZ292LnBsL3d6b3IvMjAyMy8wNi8yOS8xMjY0OC8iPgogIDxQb2RtaW90MT4KICAgIDxEYW5lSWRlbnR5ZmlrYWN5am5lPgogICAgICA8TklQPjEyMzQ1Njc4OTA8L05JUD4KICAgIDwvRGFuZUlkZW50eWZpa2FjeWpuZT4KICA8L1BvZG1pb3QxPgogIDxGYT4KICAgIDxQXzE+MjAyMy0wOC0zMTwvUF8xPgogICAgPFBfMj5GSzIwMjMvMDgvMzE8L1BfMj4KICA8L0ZhPgo8L0Zha3R1cmE+"
 }
+
 ```
 
 ### Başarılı Yanıt
 
 ```json
 {
-  "message": "Invoice saved successfully"
+  "message": "Fatura başarıyla kaydedildi"
 }
 ```
 
 ### Hata Yanıtı
 
 ```json
+Request
 {
-  "error": "XML validation failed: [Error message]"
+  "data": "PHNwZWNpZmljYXRpb24geG1sbnM9Imh0dHA6Ly9..."
+}
+
+Response
+{
+  "örnek_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Faktura xmlns=\"http://crd.gov.pl/wzor/2023/06/29/12648/\">\n  <Podmiot1>\n    <DaneIdentyfikacyjne>\n      <NIP>1234567890</NIP>\n    </DaneIdentyfikacyjne>\n  </Podmiot1>\n  <Fa>\n    <P_1>2023-08-31</P_1>\n    <P_2>FK2023/08/31</P_2>\n  </Fa>\n</Faktura>",
+  "örnek_base64": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPEZha3R1cmEgeG1sbnM9Imh0dHA6Ly9jcmQuZ292LnBsL3d6b3IvMjAyMy8wNi8yOS8xMjY0OC8iPgogIDxQb2RtaW90MT4KICAgIDxEYW5lSWRlbnR5ZmlrYWN5am5lPgogICAgICA8TklQPjEyMzQ1Njc4OTA8L05JUD4KICAgIDwvRGFuZUlkZW50eWZpa2FjeWpuZT4KICA8L1BvZG1pb3QxPgogIDxGYT4KICAgIDxQXzE+MjAyMy0wOC0zMTwvUF8xPgogICAgPFBfMj5GSzIwMjMvMDgvMzE8L1BfMj4KICA8L0ZhPgo8L0Zha3R1cmE+",
+  "error": "base64xml alanı gerekli ve boş olamaz"
 }
 ```
 
