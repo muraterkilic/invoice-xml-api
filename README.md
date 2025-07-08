@@ -65,15 +65,6 @@ Content-Type: application/json
 }
 ```
 
-```http
-GET /api/diagnostic/example-base64
-```
-
-## Lisans
-
-Bu proje özel lisanslıdır. Tüm hakları saklıdır.
-Bu proje, XML formatındaki faturaları işlemek için bir REST API sunar. Base64 ile kodlanmış XML fatura verilerini alır, XSD şemasına göre doğrular, gerekli verileri çıkarır ve veritabanına kaydeder.
-
 ## Özellikler
 
 - XML fatura verilerinin Base64 kodlamasını çözme
